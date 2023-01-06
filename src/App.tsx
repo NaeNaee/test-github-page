@@ -4,7 +4,7 @@ import './App.css';
 import {useQuery} from "react-query";
 
 function App() {
-    const query = useQuery(['animal'], () => fetch('https://apistest-fpipo.md.go.th/Animal').then(res => res.json()))
+    const query = useQuery(['animal'], () => fetch('https://restcountries.com/v3.1/all').then(res => res.json()))
     const data: any[] = query.data || [];
 
     return (
@@ -12,7 +12,7 @@ function App() {
             <ul>
                 {
                     data.map(d => (
-                        <li>{d.animalName}</li>
+                        <li>{d.name.common}</li>
                     ))
                 }
             </ul>
