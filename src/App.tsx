@@ -1,6 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import {useQuery} from "react-query";
 
 function App() {
@@ -9,6 +7,12 @@ function App() {
 
     return (
         <div>
+            <h1>Country v1</h1>
+
+            {
+                query.isFetching && <span>Loading...</span>
+            }
+
             <ul>
                 {
                     data.map(d => (
